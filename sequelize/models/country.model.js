@@ -2,22 +2,23 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
 
-    sequelize.define('WeightClass', {
+    sequelize.define('Country', {
         id: {
             field: 'id',
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        weight: {
-            field: 'weight',
+        isoCode: {
+            field: 'isoCode',
             type: DataTypes.STRING,
         },
-        lb: {
-            field: 'lb',
-            type: DataTypes.INTEGER,
+        name: {
+            field: 'name',
+            type: DataTypes.STRING,
         }
     }, {
         freezeTableName: true,
         timestamps: false
     })
+
 }

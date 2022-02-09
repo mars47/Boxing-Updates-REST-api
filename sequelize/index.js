@@ -11,7 +11,8 @@ const modelDefiners = [
     require('./models/boxer.model'),
     require('./models/event.model'),
     require('./models/organization.model'),
-    require('./models/weightClass.model')
+    require('./models/weightClass.model'),
+    require('./models/country.model')
 ];
 
 for (const modelDefiner of modelDefiners) {

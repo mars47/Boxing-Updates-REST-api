@@ -24,6 +24,10 @@ module.exports = (sequelize) => {
             field: 'weight_id',
             type: DataTypes.INTEGER,
         },
+        countryId: {
+            field: 'country_id',
+            type: DataTypes.INTEGER,
+        },
         thumbnailUrl: {
             field: 'thumbnailUrl',
             type: DataTypes.STRING,

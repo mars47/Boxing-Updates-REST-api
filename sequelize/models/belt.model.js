@@ -24,6 +24,10 @@ module.exports = (sequelize) => {
         boxerId: {
             field: 'boxer_id',
             type: DataTypes.INTEGER,
+        },
+        acquiredDate: {
+            field: 'acquiredDate',
+            type: DataTypes.STRING,
         }
     }, {
             timestamps: false
