@@ -9,16 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.19.1",
     "config.json": "0.0.4",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.5",
+    "mysql2": "^2.3.3",
+    "sequelize": "^5.22.5",
     "serverless-http": "^2.7.0"
   },
   "devDependencies": {
-    "serverless": "^2.23.0",
-    "serverless-offline": "^6.8.0"
+    "serverless": "^2.72.2",
+    "serverless-offline": "^8.4.0"
   }
 }
