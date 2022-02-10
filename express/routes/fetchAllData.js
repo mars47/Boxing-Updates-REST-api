@@ -8,12 +8,14 @@ async function getAll(req, res) {
     const events = await models.Events.findAll();
     const organizations = await models.Organization.findAll();
     const weightClasses =  await models.WeightClass.findAll(); 
+    const country =  await models.Country.findAll(); 
 
     results["belts"] = belts
     results["boxers"] = boxers
     results["events"] = events
     results["organizations"] = organizations
     results["weightClasses"] = weightClasses
+    results["country"] = country
 
     res.status(200).json(results);
 };

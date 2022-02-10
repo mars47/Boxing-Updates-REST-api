@@ -20,9 +20,9 @@ module.exports = (sequelize) => {
             field: 'venue',
             type: DataTypes.STRING,
         },
-        country: {
-            field: 'country',
-            type: DataTypes.STRING,
+        countryId: {
+            field: 'country_id',
+            type: DataTypes.INTEGER,
         },
         weightClassId: {
             field: 'weight_id',
