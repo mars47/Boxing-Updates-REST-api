@@ -1,4 +1,4 @@
-const { models } = require('../../sequelize');
+const { models } = require('../../database');
 
 async function getAll(req, res) {
 	const belts = await models.belts.findAll();

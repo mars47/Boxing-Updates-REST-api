@@ -1,5 +1,5 @@
 const app = require('./express/app');
-const sequelize = require('./sequelize');
+const sequelize = require('./database');
 const serverless = require('serverless-http')
 const PORT = 3004;
 
@@ -21,7 +21,7 @@ async function init() {
         await assertDatabaseConnectionOk();
         console.log(`Starting Sequelize + Express example on port ${PORT}...`);
         app.listen(PORT, () => {
-            console.log(`Express server started on port ${PORT}. Try some routes, such as '/api/allDataModels'.`);
+            console.log(`Express server started on port ${PORT}. Try some routes, such as 'http://localhost:3004/data'.`);
         })
     } catch (error) {
         console.log(`***ERROR*** ${error.message}`)
@@ -29,5 +29,5 @@ async function init() {
     }
 }
 
-//init();
-module.exports.handler = serverless(app)
+init();
+//module.exports.handler = serverless(app)

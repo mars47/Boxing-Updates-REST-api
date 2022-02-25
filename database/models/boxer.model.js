@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
 
-    sequelize.define('Boxers', {
+    const boxer = sequelize.define('Boxers', {
         id: {
             field: 'id',
             type: DataTypes.INTEGER,
@@ -36,4 +36,10 @@ module.exports = (sequelize) => {
         freezeTableName: true,
         timestamps: false
     })
+
+    boxer.associate = (models) => {
+        boxer.hasMany(models.Belts, {as: 'belts', foreignKey: 'boxer_id' });
+    };
+
+    return boxer
 }

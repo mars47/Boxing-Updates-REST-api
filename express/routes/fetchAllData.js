@@ -1,10 +1,15 @@
-const { models } = require('../../sequelize');
+const { models } = require('../../database');
 
 async function getAll(req, res) {
-
+    
     let results = {}
     const belts = await models.Belts.findAll();
-    const boxers = await models.Boxers.findAll();
+    const boxers = await models.Boxers.findAll(
+        {
+            include: [ {model: models.Belts, as: 'belts'} ],
+            raw: false
+        }
+    );
     const events = await models.Events.findAll();
     const organizations = await models.Organization.findAll();
     const weightClasses =  await models.WeightClass.findAll(); 

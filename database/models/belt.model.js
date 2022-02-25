@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => { 
 
-    sequelize.define('Belts', {
+   var belts = sequelize.define('Belts', {
         id: {
             field: 'id',
             type: DataTypes.INTEGER,
@@ -21,15 +21,18 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             primaryKey: true
         }, 
-        boxerId: {
-            field: 'boxer_id',
-            type: DataTypes.INTEGER,
-        },
         acquiredDate: {
             field: 'acquiredDate',
             type: DataTypes.STRING,
         }
-    }, {
+    },
+    {
             timestamps: false
     })
+
+    belts.associate = (models) => {
+        belts.belongsTo(models.Boxers, {foreignKey: 'boxer_id'});
+    };
+
+    return belts
 }

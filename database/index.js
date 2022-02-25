@@ -6,7 +6,8 @@ const sequelize  = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proce
 	dialect: 'mysql'
 })
 
-const modelDefiners = [
+const createModels = [
+ 
     require('./models/belt.model'),
     require('./models/boxer.model'),
     require('./models/event.model'),
@@ -15,8 +16,16 @@ const modelDefiners = [
     require('./models/country.model')
 ];
 
-for (const modelDefiner of modelDefiners) {
-	modelDefiner(sequelize);
+for (const createModel of createModels) {
+	createModel(sequelize);
 }
+
+const models = sequelize.models 
+
+Object.keys(models).forEach(key => {
+    if ('associate' in models[key]) {
+      models[key].associate(models);
+    }
+  });
 
 module.exports = sequelize;
